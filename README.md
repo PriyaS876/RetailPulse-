@@ -187,6 +187,21 @@ The detailed forecasting implementation is available in:
 
 ---
 
+## 🚀 Live Streamlit Application
+
+👉 **[Launch RetailPulse App](https://kzmk49dfonbbdhekwbz3pr.streamlit.app/)**
+
+The RetailPulse Streamlit application provides an interactive interface for the trained machine-learning models.
+
+### Available Features
+
+* ❤️ **Customer Churn Prediction** — predicts whether a customer is likely to churn based on customer purchase behavior.
+* 👥 **Customer Segmentation** — uses RFM values and a trained K-Means model to identify the customer's cluster.
+* 📈 **Sales Forecasting** — uses a trained Prophet model to forecast future monthly sales for a user-selected forecast horizon.
+
+The application provides a user-friendly way to interact with the project's machine-learning models without running the notebooks manually.
+
+
 ## 📊 7. Power BI Dashboard
 
 An interactive **Power BI dashboard** was created to present the project's business insights in an easy-to-understand format.
