@@ -1,311 +1,474 @@
-# RetailPulse – AI-Powered Retail Analytics & Forecasting Platform
+📊 RetailPulse
 
-## 📌 Project Overview
+AI-Powered Customer Analytics & Demand Forecasting Platform
 
-**RetailPulse** is an end-to-end retail analytics and machine learning project designed to transform raw retail transaction data into actionable business insights.
+RetailPulse is an end-to-end retail analytics and machine learning project that combines sales analytics, customer segmentation, churn prediction, demand forecasting, and inventory optimization in an interactive Streamlit dashboard.
 
-The project combines **data cleaning, feature engineering, exploratory data analysis, RFM customer analysis, machine-learning-based customer segmentation, sales forecasting, Power BI visualization, and an interactive Streamlit application**.
+The project follows a complete data-science workflow:
 
-The goal is to help businesses understand **what happened, why it happened, which customers matter most, and what may happen next**.
+Data → Cleaning → Feature Engineering → EDA → Customer Analytics → ML Models → Forecasting → Inventory Recommendations → Streamlit Dashboard
 
----
+🎯 Project Overview
 
-## 🎯 Objectives
+Retail businesses need to understand customer behavior, anticipate future demand, identify customers at risk of churn, and maintain the right inventory levels.
 
-* Clean and prepare raw retail transaction data.
-* Perform exploratory data analysis to identify sales patterns.
-* Analyze customer purchasing behavior using **RFM (Recency, Frequency, Monetary)** analysis.
-* Segment customers using **K-Means clustering**.
-* Forecast future sales using time-series forecasting techniques.
-* Build an interactive **Power BI dashboard** for business intelligence.
-* Develop a **Streamlit application** to provide an interactive interface for the analytics/ML workflow.
-* Generate insights that can support customer retention, sales planning, and business decision-making.
+RetailPulse addresses these problems through:
 
----
+Sales and business KPI analysis
 
-## 🔄 Project Workflow
+RFM-based customer analysis
 
-```text
-Raw Retail Data
-       ↓
-Data Loading & Cleaning
-       ↓
-Feature Engineering
-       ↓
-Exploratory Data Analysis
-       ↓
-RFM Customer Analysis
-       ↓
-Customer Segmentation
-(K-Means Clustering)
-       ↓
-Sales Forecasting
-       ↓
-Power BI Dashboard
-       ↓
-Streamlit Application
-```
+K-Means customer segmentation
 
----
+Churn prediction
 
-## 📂 Project Structure
+Prophet sales forecasting
 
-```text
+LSTM future forecasting
+
+Hybrid Prophet + LSTM forecasting
+
+Inventory reorder recommendations
+
+Interactive Streamlit business dashboard
+
+The original project workflow also defines deployment as part of the broader roadmap, while the current repository focuses on the implemented analytics, ML, forecasting, optimization, and dashboard layers.
+
+✨ Key Features
+
+Area
+
+Implementation
+
+Data Preparation
+
+Cleaning, transformation and feature engineering
+
+Sales Analytics
+
+Revenue, orders, customers, AOV and sales trends
+
+Customer Analytics
+
+RFM analysis
+
+Segmentation
+
+K-Means clustering
+
+Churn
+
+Churn classification and risk analysis
+
+Forecasting
+
+Prophet + LSTM + Hybrid forecasting
+
+Inventory
+
+Safety stock, reorder point and reorder quantity recommendations
+
+Dashboard
+
+Multi-page Streamlit application
+
+Business Insights
+
+Actionable recommendations based on model outputs
+
+🧠 Machine Learning & Analytics
+
+1. Customer RFM Analysis
+
+Customer behavior is represented using:
+
+Recency – how recently a customer purchased
+
+Frequency – how often a customer purchased
+
+Monetary – how much a customer spent
+
+The resulting RFM data is used for customer profiling and segmentation.
+
+2. Customer Segmentation
+
+A trained K-Means model is used to assign customers to segments based on RFM characteristics.
+
+The Streamlit dashboard also provides an interactive way to enter RFM values and identify the corresponding customer cluster.
+
+3. Churn Prediction
+
+The application uses a trained churn classification model to estimate whether a customer is likely to churn.
+
+The dashboard supports:
+
+Purchase frequency input
+
+Monetary value input
+
+Churn prediction
+
+Churn probability / risk interpretation
+
+High-risk customer analysis when prediction data is available
+
+4. Sales Forecasting
+
+RetailPulse contains multiple forecasting approaches:
+
+Prophet
+
+A time-series model used for sales forecasting.
+
+LSTM
+
+A neural-network-based time-series model used for future sales prediction.
+
+Hybrid Forecast
+
+Prophet and LSTM predictions are combined to provide a hybrid forecast.
+
+The current forecasting output includes a 30-day future prediction.
+
+5. Inventory Optimization
+
+Inventory recommendations are generated using demand statistics such as:
+
+Total quantity
+
+Average daily demand
+
+Demand standard deviation
+
+Safety stock
+
+Reorder point
+
+Current stock
+
+Recommended reorder quantity
+
+Reorder recommendation
+
+This converts forecasting output into an operational inventory decision.
+
+📊 Streamlit Dashboard
+
+The dashboard contains the following sections:
+
+🏠 Home
+
+Provides an overview of the platform and key retail KPIs.
+
+📊 Sales Analytics
+
+Displays sales performance, trends and business-level metrics.
+
+❤️ Churn Prediction
+
+Allows interactive churn prediction and displays customer risk analysis.
+
+👥 Customer Segmentation
+
+Provides RFM-based customer segmentation and interactive cluster prediction.
+
+📈 Sales Forecasting
+
+Displays LSTM future forecasts and Prophet forecasting results, with support for comparing forecasting outputs.
+
+📦 Inventory Optimization
+
+Displays products requiring replenishment and recommended reorder quantities.
+
+💡 Business Insights
+
+Converts analytical and ML outputs into business recommendations.
+
+🏗️ Project Architecture
+
+                    Retail Sales Dataset
+                            │
+                            ▼
+                 Data Loading & Cleaning
+                            │
+                            ▼
+                  Feature Engineering
+                            │
+             ┌──────────────┼──────────────┐
+             ▼              ▼              ▼
+           EDA          RFM Analysis    Time Series
+             │              │              │
+             │              ▼              ├─────────────┐
+             │        K-Means              ▼             ▼
+             │       Segmentation       Prophet        LSTM
+             │                             │             │
+             │                             └──────┬──────┘
+             │                                    ▼
+             │                              Hybrid Forecast
+             │                                    │
+             ├──────────────┐                     ▼
+             ▼              ▼             Inventory Optimization
+        Churn Model     Customer Data             │
+             │              │                     ▼
+             └──────────────┴────────────► Business Insights
+                                                  │
+                                                  ▼
+                                        Streamlit Dashboard
+
+📁 Repository Structure
+
 RetailPulse/
 │
-├── 01_Data_Loading_Cleaning(5).ipynb
-├── 02_Feature_Engineering(3).ipynb
-├── 03_Exploratory_Data_Analysis(1).ipynb
-├── 04_Customer_RFM_Analysis(2).ipynb
-├── 05_Customer_Segmentation(2).ipynb
-├── 06_Sales_Forecasting(1).ipynb
-│
-├── Customer_RFM.csv
-│
-├── Dashboard/
-│   └── RetailPulse_Dashboard.pbix
-│
-├── Images/
-│   └── RetailPulse_Dashboard.png
-│
 ├── app.py
+├── README.md
+├── requirements.txt
+├── .gitignore
 │
-└── README.md
-```
+├── Notebooks/
+│   ├── 01_Data_Loading_Cleaning.ipynb
+│   ├── 02_Feature_Engineering.ipynb
+│   ├── 03_Exploratory_Data_Analysis.ipynb
+│   ├── 04_Customer_RFM_Analysis.ipynb
+│   ├── 05_Customer_Segmentation.ipynb
+│   ├── 06_Sales_Forecasting.ipynb
+│   ├── 07_Churn_Prediction.ipynb
+│   ├── 08_LSTM_Forecasting.ipynb
+│   ├── 09_Inventory_Optimization.ipynb
+│   ├── 10_Hybrid_Forecasting.ipynb
+│   │
+│   ├── Retail_Cleaned.csv
+│   ├── Retail_Feature_Engineered.csv
+│   ├── Customer_RFM.csv
+│   ├── Customer_Segments.csv
+│   ├── Sales_Forecast.csv
+│   ├── LSTM_Future_Forecast.csv
+│   └── Inventory_Recommendations.csv
+│
+└── Models/
+    ├── churn_model.pkl
+    ├── kmeans_model.pkl
+    ├── prophet_model.pkl
+    └── rfm_scaler.pkl
 
-> File/folder names can be updated if the final GitHub structure uses different names.
+Keep large/raw datasets and generated model artifacts out of GitHub when they are too large. Use .gitignore and Git LFS or external storage when appropriate.
 
----
+🧪 Notebook Workflow
 
-## 🧹 1. Data Loading & Cleaning
+Notebook
 
-The raw retail transaction dataset was loaded and prepared for analysis.
+Purpose
 
-Major preprocessing steps included:
+01_Data_Loading_Cleaning.ipynb
 
-* Handling missing values
-* Removing/handling invalid records
-* Checking duplicate transactions
-* Correcting data types
-* Handling cancelled/invalid transactions
-* Creating a reliable transaction-level dataset
-* Preparing the cleaned data for downstream analysis
+Load and clean retail data
 
----
+02_Feature_Engineering.ipynb
 
-## ⚙️ 2. Feature Engineering
+Create analytical features
 
-Additional features were created from the transaction data to support deeper analysis.
+03_Exploratory_Data_Analysis.ipynb
 
-Examples include:
+Explore sales and customer patterns
 
-* Total Amount
-* Year
-* Month
-* Month Name
-* Day
-* Weekday
-* Hour
-* Weekend indicator
-* Quarter
-* Time of Day
+04_Customer_RFM_Analysis.ipynb
 
-These features helped identify **temporal sales patterns and customer behavior**.
+Build RFM customer profiles
 
----
+05_Customer_Segmentation.ipynb
 
-## 📊 3. Exploratory Data Analysis
+Train/evaluate customer clusters
 
-EDA was performed to understand the overall sales and customer behavior.
+06_Sales_Forecasting.ipynb
 
-The analysis includes:
+Prophet-based sales forecasting
 
-* Sales by country
-* Top customers
-* Hourly sales patterns
-* Weekday sales patterns
-* Monthly sales trends
-* Revenue analysis
-* Average Order Value (AOV)
-* Customer purchasing behavior
+07_Churn_Prediction.ipynb
 
-### Key Finding
+Customer churn modeling
 
-The analysis identified differences in purchasing behavior across **countries, customers, weekdays, and time periods**, providing the foundation for customer segmentation and forecasting.
+08_LSTM_Forecasting.ipynb
 
----
+LSTM future forecasting
 
-## 👥 4. RFM Customer Analysis
+09_Inventory_Optimization.ipynb
 
-RFM analysis was used to evaluate customer value based on three dimensions:
+Reorder and inventory recommendations
 
-| Metric        | Meaning                             |
-| ------------- | ----------------------------------- |
-| **Recency**   | How recently a customer purchased   |
-| **Frequency** | How frequently a customer purchased |
-| **Monetary**  | How much a customer spent           |
+10_Hybrid_Forecasting.ipynb
 
-The resulting RFM dataset was used as an input for customer segmentation.
+Combine Prophet and LSTM forecasts
 
----
+🛠️ Technology Stack
 
-## 🤖 5. Customer Segmentation
+Programming & Data Science
 
-**K-Means clustering** was applied to the RFM features to identify groups of customers with similar purchasing behavior.
+Python
 
-The segmentation helps identify customer groups such as:
+Pandas
 
-* High-value customers
-* Loyal/active customers
-* Regular customers
-* Customers requiring re-engagement
+NumPy
 
-The clustering results can support targeted marketing and customer-retention strategies.
+Scikit-learn
 
-### Model Evaluation
+Machine Learning
 
-Cluster quality was evaluated using clustering evaluation techniques such as the **Silhouette Score**.
+XGBoost
 
----
+K-Means
 
-## 📈 6. Sales Forecasting
+Joblib
 
-The project also includes a dedicated sales forecasting workflow.
+Forecasting
 
-The forecasting component analyzes historical sales patterns to estimate future sales trends.
+Prophet
 
-The forecasting workflow is used to support:
+PyTorch / LSTM
 
-* Future sales planning
-* Demand estimation
-* Inventory planning
-* Business decision-making
+Visualization
 
-The detailed forecasting implementation is available in:
+Matplotlib
 
-`06_Sales_Forecasting(1).ipynb`
+Plotly
 
----
+Streamlit
 
-## 🚀 Live Streamlit Application
+Development
 
-👉 **[Launch RetailPulse App](https://kzmk49dfonbbdhekwbz3pr.streamlit.app/)**
+Jupyter Notebook
 
-The RetailPulse Streamlit application provides an interactive interface for the trained machine-learning models.
+Git
 
-### Available Features
+GitHub
 
-* ❤️ **Customer Churn Prediction** — predicts whether a customer is likely to churn based on customer purchase behavior.
-* 👥 **Customer Segmentation** — uses RFM values and a trained K-Means model to identify the customer's cluster.
-* 📈 **Sales Forecasting** — uses a trained Prophet model to forecast future monthly sales for a user-selected forecast horizon.
+🚀 Run Locally
 
-The application provides a user-friendly way to interact with the project's machine-learning models without running the notebooks manually.
+1. Clone the repository
 
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd RetailPulse
 
-## 📊 7. Power BI Dashboard
+2. Create a virtual environment
 
-An interactive **Power BI dashboard** was created to present the project's business insights in an easy-to-understand format.
+Windows:
 
-The dashboard provides visual analysis of:
+python -m venv .venv
+.venv\Scripts\activate
 
-* Revenue
-* Orders
-* Customers
-* Average Order Value
-* Sales trends
-* Customer insights
-* Sales forecasting
-* Other key business metrics
+macOS/Linux:
 
-The dashboard acts as the **business intelligence and visualization layer** of RetailPulse.
+python3 -m venv .venv
+source .venv/bin/activate
 
----
+3. Install dependencies
 
-## 🚀 8. Streamlit Application
+pip install -r requirements.txt
 
-A **Streamlit application** was developed to provide an interactive interface for the RetailPulse analytics/ML workflow.
+4. Start the Streamlit application
 
-The application makes the project easier to demonstrate and allows users to interact with the implemented analysis/models through a web-based interface.
+streamlit run app.py
 
-### Application
+The dashboard will open in your browser.
 
-The Streamlit application is implemented in:
+📌 Important Repository Notes
 
-```text
-app.py
-```
+The Streamlit application expects trained model files and generated CSV outputs in the paths used by app.py.
 
----
+Before publishing:
 
-## 🛠️ Technologies Used
+Verify every model file exists.
 
-### Programming & Data Science
+Verify every CSV referenced by app.py exists.
 
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
+Remove machine-specific absolute paths such as C:\Users\....
 
-### Machine Learning
+Keep project-relative paths so the repository works on another computer.
 
-* K-Means Clustering
-* RFM-based Customer Segmentation
-* Time-Series Forecasting
+Test the application from a fresh virtual environment.
 
-### Visualization & BI
+Make sure no passwords, API keys or private credentials are committed.
 
-* Power BI
-* Streamlit
-* Matplotlib
+📈 Current Project Status
 
-### Development Tools
+Implemented
 
-* Jupyter Notebook
-* Git
-* GitHub
+Data cleaning
 
----
+Feature engineering
 
-## 💡 Business Value
+EDA
 
-RetailPulse can help a retail business:
+RFM analysis
 
-* Identify valuable customer segments
-* Understand customer purchasing behavior
-* Monitor sales performance
-* Identify important sales patterns
-* Estimate future sales
-* Improve customer targeting
-* Support inventory and sales planning
-* Make data-driven business decisions
+Customer segmentation
 
----
+Churn prediction
 
-## ⭐ Key Project Highlights
+Prophet forecasting
 
-* End-to-end retail analytics workflow
-* RFM-based customer intelligence
-* Machine-learning-based customer segmentation
-* Sales forecasting
-* Interactive Power BI dashboard
-* Interactive Streamlit application
-* Business-focused insights from transactional data
+LSTM forecasting
 
----
+Hybrid forecasting
 
-## 📌 Conclusion
+Inventory optimization
 
-**RetailPulse** combines traditional business intelligence with machine learning and interactive application development to create an end-to-end retail analytics solution.
+Streamlit dashboard
 
-The project demonstrates how raw transaction data can be transformed into:
+Business insights
 
-**Data → Insights → Customer Segments → Forecasts → Business Decisions**
+Model and CSV outputs connected to the application
 
----
+Optional Future Enhancements
 
-## 👩‍💻 Author
+These are not required for the current portfolio version, but can be added if targeting MLOps / ML Engineer roles:
 
-**Priya Rani**
+Docker containerization
 
-Data Science & Analytics | Python | SQL | Power BI | Machine Learning
+Kubernetes deployment
+
+GitHub Actions CI/CD
+
+MLflow experiment tracking
+
+Evidently drift monitoring
+
+Automated retraining pipeline
+
+Cloud deployment
+
+Prometheus/Grafana monitoring
+
+💼 Portfolio Value
+
+RetailPulse demonstrates an end-to-end understanding of:
+
+Data Analytics + Machine Learning + Time-Series Forecasting + Customer Analytics + Business Intelligence + Streamlit Deployment
+
+It is suitable for demonstrating skills relevant to:
+
+Data Analyst
+
+Data Scientist
+
+Junior Data Scientist
+
+Business/Data Analytics
+
+Machine Learning Intern
+
+Junior ML Engineer
+
+For MLOps/ML Engineer positions, the optional production components listed above can further strengthen the project.
+
+⚠️ Disclaimer
+
+The project is a portfolio/learning implementation based on retail transaction data. Business impact targets from the original project specification should not be presented as measured results unless they have been experimentally validated.
+
+👩‍💻 Author
+
+Priya Rani
+
+Data Science & Analytics | Machine Learning | Business Intelligence
+
+⭐ Acknowledgements
+
+This project was developed as an end-to-end Data Science & Analytics portfolio project inspired by the RetailPulse project specification and retail demand/customer analytics use case.
