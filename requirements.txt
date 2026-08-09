@@ -7,3 +7,26 @@ joblib
 prophet
 plotly
 matplotlib
+
+# Core application
+streamlit
+pandas
+numpy
+scikit-learn
+xgboost
+joblib
+
+# Forecasting
+prophet
+
+# Deep learning / LSTM
+torch
+
+# Visualization
+matplotlib
+plotly
+seaborn
+
+# Notebook / development
+jupyter
+openpyxl
