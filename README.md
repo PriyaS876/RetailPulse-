@@ -443,21 +443,20 @@ RetailPulse demonstrates an end-to-end understanding of:
 
 Data Analytics + Machine Learning + Time-Series Forecasting + Customer Analytics + Business Intelligence + Streamlit Deployment
 
-It is suitable for demonstrating skills relevant to:
+## 🚀 Live Demo
 
-Data Analyst
+🔗 **[RetailPulse – Live Streamlit App](https://kzmk49dfonbbdhekwbz3pr.streamlit.app/)**
 
-Data Scientist
+RetailPulse is deployed as an interactive Streamlit application featuring:
 
-Junior Data Scientist
+* 📊 Sales Analytics
+* ❤️ Churn Prediction
+* 👥 Customer Segmentation
+* 📈 Sales Forecasting
+* 📦 Inventory Optimization
+* 💡 Business Insights & Recommendations
 
-Business/Data Analytics
 
-Machine Learning Intern
-
-Junior ML Engineer
-
-For MLOps/ML Engineer positions, the optional production components listed above can further strengthen the project.
 
 ⚠️ Disclaimer
 
